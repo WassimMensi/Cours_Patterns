@@ -1,0 +1,15 @@
+C:\Users\wasso\OneDrive\Desktop\Isitech\ESI 4\Pattern C#\Builder\Tp\bin\Debug\net8.0\Tp.exe
+C:\Users\wasso\OneDrive\Desktop\Isitech\ESI 4\Pattern C#\Builder\Tp\bin\Debug\net8.0\Tp.deps.json
+C:\Users\wasso\OneDrive\Desktop\Isitech\ESI 4\Pattern C#\Builder\Tp\bin\Debug\net8.0\Tp.runtimeconfig.json
+C:\Users\wasso\OneDrive\Desktop\Isitech\ESI 4\Pattern C#\Builder\Tp\bin\Debug\net8.0\Tp.dll
+C:\Users\wasso\OneDrive\Desktop\Isitech\ESI 4\Pattern C#\Builder\Tp\bin\Debug\net8.0\Tp.pdb
+C:\Users\wasso\OneDrive\Desktop\Isitech\ESI 4\Pattern C#\Builder\Tp\obj\Debug\net8.0\Tp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\wasso\OneDrive\Desktop\Isitech\ESI 4\Pattern C#\Builder\Tp\obj\Debug\net8.0\Tp.AssemblyInfoInputs.cache
+C:\Users\wasso\OneDrive\Desktop\Isitech\ESI 4\Pattern C#\Builder\Tp\obj\Debug\net8.0\Tp.AssemblyInfo.cs
+C:\Users\wasso\OneDrive\Desktop\Isitech\ESI 4\Pattern C#\Builder\Tp\obj\Debug\net8.0\Tp.csproj.CoreCompileInputs.cache
+C:\Users\wasso\OneDrive\Desktop\Isitech\ESI 4\Pattern C#\Builder\Tp\obj\Debug\net8.0\Tp.sourcelink.json
+C:\Users\wasso\OneDrive\Desktop\Isitech\ESI 4\Pattern C#\Builder\Tp\obj\Debug\net8.0\Tp.dll
+C:\Users\wasso\OneDrive\Desktop\Isitech\ESI 4\Pattern C#\Builder\Tp\obj\Debug\net8.0\refint\Tp.dll
+C:\Users\wasso\OneDrive\Desktop\Isitech\ESI 4\Pattern C#\Builder\Tp\obj\Debug\net8.0\Tp.pdb
+C:\Users\wasso\OneDrive\Desktop\Isitech\ESI 4\Pattern C#\Builder\Tp\obj\Debug\net8.0\Tp.genruntimeconfig.cache
+C:\Users\wasso\OneDrive\Desktop\Isitech\ESI 4\Pattern C#\Builder\Tp\obj\Debug\net8.0\ref\Tp.dll
