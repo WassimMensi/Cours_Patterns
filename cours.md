@@ -82,3 +82,13 @@ Le But du pattern est la création d'objets regroupés par famille sans devoir s
 ## Description
 
 séparer la construction d'un objet complexe de sa représentation
+
+# Singleton
+
+## Description
+
+Pattern qui permet d'assurer qu'une classe n'a qu'une seule instance au cours de l'execution d'un programme et de fournir un point d'accès global à cette instance
+
+Création de nouveaux objets par duplication de l'objet existant
+On les appelle prototypes
+Capacité de clonage
