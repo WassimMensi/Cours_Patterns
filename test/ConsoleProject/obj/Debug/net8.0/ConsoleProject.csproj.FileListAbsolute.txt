@@ -1,0 +1,14 @@
+C:\Users\wasso\OneDrive\Desktop\Isitech\ESI 4\Pattern C#\test\ConsoleProject\bin\Debug\net8.0\ConsoleProject.exe
+C:\Users\wasso\OneDrive\Desktop\Isitech\ESI 4\Pattern C#\test\ConsoleProject\bin\Debug\net8.0\ConsoleProject.deps.json
+C:\Users\wasso\OneDrive\Desktop\Isitech\ESI 4\Pattern C#\test\ConsoleProject\bin\Debug\net8.0\ConsoleProject.runtimeconfig.json
+C:\Users\wasso\OneDrive\Desktop\Isitech\ESI 4\Pattern C#\test\ConsoleProject\bin\Debug\net8.0\ConsoleProject.dll
+C:\Users\wasso\OneDrive\Desktop\Isitech\ESI 4\Pattern C#\test\ConsoleProject\bin\Debug\net8.0\ConsoleProject.pdb
+C:\Users\wasso\OneDrive\Desktop\Isitech\ESI 4\Pattern C#\test\ConsoleProject\obj\Debug\net8.0\ConsoleProject.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\wasso\OneDrive\Desktop\Isitech\ESI 4\Pattern C#\test\ConsoleProject\obj\Debug\net8.0\ConsoleProject.AssemblyInfoInputs.cache
+C:\Users\wasso\OneDrive\Desktop\Isitech\ESI 4\Pattern C#\test\ConsoleProject\obj\Debug\net8.0\ConsoleProject.AssemblyInfo.cs
+C:\Users\wasso\OneDrive\Desktop\Isitech\ESI 4\Pattern C#\test\ConsoleProject\obj\Debug\net8.0\ConsoleProject.csproj.CoreCompileInputs.cache
+C:\Users\wasso\OneDrive\Desktop\Isitech\ESI 4\Pattern C#\test\ConsoleProject\obj\Debug\net8.0\ConsoleProject.dll
+C:\Users\wasso\OneDrive\Desktop\Isitech\ESI 4\Pattern C#\test\ConsoleProject\obj\Debug\net8.0\refint\ConsoleProject.dll
+C:\Users\wasso\OneDrive\Desktop\Isitech\ESI 4\Pattern C#\test\ConsoleProject\obj\Debug\net8.0\ConsoleProject.pdb
+C:\Users\wasso\OneDrive\Desktop\Isitech\ESI 4\Pattern C#\test\ConsoleProject\obj\Debug\net8.0\ConsoleProject.genruntimeconfig.cache
+C:\Users\wasso\OneDrive\Desktop\Isitech\ESI 4\Pattern C#\test\ConsoleProject\obj\Debug\net8.0\ref\ConsoleProject.dll
