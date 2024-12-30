@@ -9,10 +9,10 @@ public class Vendeur
         this.constructeur = constructeur;
     }
 
-    public Liasse Construire()
+    public Liasse Construire(string nomClient)
     {
-        constructeur.ConstruitBonDeCommande();
-        constructeur.ConstruitDemandeImmatriculation();
+        constructeur.ConstruitBonDeCommande(string nomClient);
+        constructeur.ConstruitDemandeImmatriculation(string nomClient);
         return constructeur.Resultat();
     }
 }
