@@ -1,94 +1,279 @@
-# Pattern C# 
+# Design Patterns en C# : Abstract Factory, Builder, Prototype, Singleton
 
-## Introduction
+Les **Design Patterns** sont des solutions réutilisables à des problèmes récurrents dans le développement logiciel. Ici, nous allons explorer les patterns "Abstract Factory", "Builder", "Prototype" et "Singleton" en C# avec des explications et des exemples détaillés.
 
-design pattern = schéma d'objet qui résout un problème récurrent
+---
 
-Ensemble de classes et de relations dans le cadre de la POO
+## Abstract Factory
 
-Design pattern => basé sur des bonnes pratiques
+### Définition
+Le **pattern Abstract Factory** fournit une interface pour créer des familles d'objets liés ou dépendants sans spécifier leurs classes concrètes. Il est particulièrement utile lorsque vous avez plusieurs variantes d'une famille d'objets et que vous souhaitez garantir qu'ils soient utilisés ensemble.
 
-## Description des patterns
+### Cas d'utilisation
+- Lorsque vous devez garantir que les objets créés sont compatibles entre eux.
+- Lorsque votre application doit prendre en charge plusieurs familles de produits.
+- Exemple : création de composants GUI spécifiques à une plateforme (Windows, MacOS, etc.).
 
-Le langage UML et C#
+### Structure
+![Structure](images\abstractFactory.png)
 
-Pour chaque pattern :
-    - Nom
-    - Description
-    - Exemple sous forme d'UML
-    - Structure générique du pattern
-    - Le cas d'utilisation
-    - Un exemple de code en C#
-    - [lien vers refactoring.guru ](https://refactoring.guru)
-
-# Étude de cas : la vente en ligne de véhicules
-
-Véhicule destiné à la vente en ligne
-
-- Catalogue de véhicules
-- Options de véhicules
-- Panier / Gestion de Commandes
-- Gestion des clients
-
-# Les patterns
-
-Abstract Factory = Construire les objets du domaine (Automobile à essence, électrique, hybride)
-Builder, Prototype = Construire les liasses de documents nécéssaires en cas d'acquisition d'un véhicule
-Factory Method = Créer des commandes
-Singleton = Créer la liasse vierge de documents
-
-
-
+### Exemple en C#
 ```csharp
-public class Document
+// Interfaces des produits
+public interface IButton
 {
-    public string Title { get; set; }
-    public string Content { get; set; }
-    public string Author { get; set; }
-    public DateTime Created { get; set; }
+    void Render();
 }
 
-public class Program {
-    public Document CreateDoc(string typeDoc)
-    {
-        Document doc = null;
+public interface ICheckbox
+{
+    void Render();
+}
 
-        if (typeDoc == "Word")
-        {
-            doc = new Document();
-            doc.Title = "New Document";
-            doc.Content = "Content";
-        }
-        else if (typeDoc == "Excel")
-        {
-            doc = new Document();
-            doc.Title = "New Excel Document";
-            doc.Content = "Excel Content";
-        }
-        else
-        {
-            doc = new Document();
-            doc.Title = "New Document";
-            doc.Content = "Content";
-        }
+// Implémentations concrètes des produits
+public class WindowsButton : IButton
+{
+    public void Render() => Console.WriteLine("Rendering Windows Button");
+}
+
+public class MacOSButton : IButton
+{
+    public void Render() => Console.WriteLine("Rendering MacOS Button");
+}
+
+public class WindowsCheckbox : ICheckbox
+{
+    public void Render() => Console.WriteLine("Rendering Windows Checkbox");
+}
+
+public class MacOSCheckbox : ICheckbox
+{
+    public void Render() => Console.WriteLine("Rendering MacOS Checkbox");
+}
+
+// Interface de la fabrique abstraite
+public interface IGUIFactory
+{
+    IButton CreateButton();
+    ICheckbox CreateCheckbox();
+}
+
+// Fabriques concrètes
+public class WindowsFactory : IGUIFactory
+{
+    public IButton CreateButton() => new WindowsButton();
+    public ICheckbox CreateCheckbox() => new WindowsCheckbox();
+}
+
+public class MacOSFactory : IGUIFactory
+{
+    public IButton CreateButton() => new MacOSButton();
+    public ICheckbox CreateCheckbox() => new MacOSCheckbox();
+}
+
+// Client
+public class Application
+{
+    private readonly IButton _button;
+    private readonly ICheckbox _checkbox;
+
+    public Application(IGUIFactory factory)
+    {
+        _button = factory.CreateButton();
+        _checkbox = factory.CreateCheckbox();
+    }
+
+    public void Render()
+    {
+        _button.Render();
+        _checkbox.Render();
     }
 }
+
+// Utilisation
+var factory = new WindowsFactory();
+var app = new Application(factory);
+app.Render();
 ```
 
-Le But du pattern est la création d'objets regroupés par famille sans devoir spécifier la classe concrète de l'objet
+---
 
-# Pattern Builder
+## Builder
 
-## Description
+### Définition
+Le **pattern Builder** permet de construire des objets complexes étape par étape. Il sépare la construction d’un objet de sa représentation, ce qui permet d'utiliser le même processus de construction pour différentes représentations.
 
-séparer la construction d'un objet complexe de sa représentation
+### Cas d'utilisation
+- Lorsque vous devez construire un objet complexe composé de plusieurs étapes.
+- Lorsque vous voulez isoler le code de construction du code de représentation.
+- Exemple : création d'une maison ou d'un document complexe (PDF, HTML, etc.).
 
-# Singleton
+### Structure
+![Structure](images\builder.png)
 
-## Description
+### Exemple en C#
+```csharp
+// Produit complexe
+public class House
+{
+    public string Walls { get; set; }
+    public string Roof { get; set; }
+    public string Foundation { get; set; }
 
-Pattern qui permet d'assurer qu'une classe n'a qu'une seule instance au cours de l'execution d'un programme et de fournir un point d'accès global à cette instance
+    public override string ToString()
+    {
+        return $"House with {Walls} walls, {Roof} roof, and {Foundation} foundation.";
+    }
+}
 
-Création de nouveaux objets par duplication de l'objet existant
-On les appelle prototypes
-Capacité de clonage
+// Interface du constructeur
+public interface IHouseBuilder
+{
+    void BuildWalls();
+    void BuildRoof();
+    void BuildFoundation();
+    House GetResult();
+}
+
+// Constructeur concret
+public class ConcreteHouseBuilder : IHouseBuilder
+{
+    private House _house = new House();
+
+    public void BuildWalls() => _house.Walls = "Concrete";
+
+    public void BuildRoof() => _house.Roof = "Concrete";
+
+    public void BuildFoundation() => _house.Foundation = "Concrete";
+
+    public House GetResult() => _house;
+}
+
+// Directeur
+public class Director
+{
+    private IHouseBuilder _builder;
+
+    public Director(IHouseBuilder builder)
+    {
+        _builder = builder;
+    }
+
+    public void Construct()
+    {
+        _builder.BuildFoundation();
+        _builder.BuildWalls();
+        _builder.BuildRoof();
+    }
+}
+
+// Utilisation
+var builder = new ConcreteHouseBuilder();
+var director = new Director(builder);
+director.Construct();
+House house = builder.GetResult();
+Console.WriteLine(house);
+```
+
+---
+
+## Prototype
+
+### Définition
+Le **pattern Prototype** permet de créer de nouveaux objets en copiant des instances existantes, plutôt que de les créer à partir de zéro. Cela est particulièrement utile lorsqu'il est coûteux ou complexe de créer un nouvel objet à partir de rien. 
+
+
+
+### Cas d'utilisation
+- Lorsque la création d’un objet est coûteuse ou complexe.
+- Lorsque vous avez besoin d’une copie exacte d’un objet existant.
+- Exemple : systèmes de gestion de ressources graphiques, éditeurs de graphismes.
+
+### Structure
+![Structure](images\prototype1.png)
+![Structure](images\prototype2.png)
+
+### Exemple en C#
+```csharp
+// Classe Prototype de base
+public abstract class Shape
+{
+    public string Color { get; set; }
+
+    protected Shape(string color)
+    {
+        Color = color;
+    }
+
+    public Shape Clone()
+    {
+        return (Shape)this.MemberwiseClone();
+    }
+}
+
+// Classe concrète
+public class Circle : Shape
+{
+    public int Radius { get; set; }
+
+    public Circle(string color, int radius) : base(color)
+    {
+        Radius = radius;
+    }
+}
+
+// Utilisation
+var circle1 = new Circle("Red", 10);
+var circle2 = (Circle)circle1.Clone();
+
+Console.WriteLine($"Circle1: {circle1.Color}, Radius: {circle1.Radius}");
+Console.WriteLine($"Circle2: {circle2.Color}, Radius: {circle2.Radius}");
+```
+
+---
+
+## Singleton
+
+### Définition
+Le **pattern Singleton** garantit qu'une classe n'a qu'une seule instance et fournit un point d'accès global à cette instance. Il est souvent utilisé pour gérer des ressources partagées ou un état global.
+
+### Cas d'utilisation
+- Lorsque vous avez besoin d'une seule instance d'une classe (exemple : gestion de la configuration ou connexion à une base de données).
+- Lorsque vous devez fournir un accès global à une instance.
+
+### Structure
+![Structure](images\singleton.png)
+
+### Exemple en C#
+```csharp
+public class Singleton
+{
+    private static Singleton _instance;
+
+    // Constructeur privé pour empêcher l’instanciation.
+    private Singleton() { }
+
+    public static Singleton Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = new Singleton();
+            }
+            return _instance;
+        }
+    }
+
+    public void DoSomething()
+    {
+        Console.WriteLine("Singleton en action !");
+    }
+}
+
+// Utilisation
+var singleton = Singleton.Instance;
+singleton.DoSomething();
+```
+
+
