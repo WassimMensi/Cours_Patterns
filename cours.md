@@ -15,7 +15,7 @@ Le **pattern Abstract Factory** fournit une interface pour créer des familles d
 - Exemple : création de composants GUI spécifiques à une plateforme (Windows, MacOS, etc.).
 
 ### Structure
-![Structure](images\abstractFactory.png)
+![Structure](images/abstractFactory.png)
 
 ### Exemple en C#
 ```csharp
@@ -109,7 +109,7 @@ Le **pattern Builder** permet de construire des objets complexes étape par éta
 - Exemple : création d'une maison ou d'un document complexe (PDF, HTML, etc.).
 
 ### Structure
-![Structure](images\builder.png)
+![Structure](images/builder.png)
 
 ### Exemple en C#
 ```csharp
@@ -190,8 +190,8 @@ Le **pattern Prototype** permet de créer de nouveaux objets en copiant des inst
 - Exemple : systèmes de gestion de ressources graphiques, éditeurs de graphismes.
 
 ### Structure
-![Structure](images\prototype1.png)
-![Structure](images\prototype2.png)
+![Structure](images/prototype1.png)
+![Structure](images/prototype2.png)
 
 ### Exemple en C#
 ```csharp
@@ -242,7 +242,7 @@ Le **pattern Singleton** garantit qu'une classe n'a qu'une seule instance et fou
 - Lorsque vous devez fournir un accès global à une instance.
 
 ### Structure
-![Structure](images\singleton.png)
+![Structure](images/singleton.png)
 
 ### Exemple en C#
 ```csharp
