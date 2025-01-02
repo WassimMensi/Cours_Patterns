@@ -466,3 +466,5 @@ Fournir des solutions pour distribuer les traitements et les algorithmes entre l
 ### Chain of Responsibility
 
 Construit une chaine d'objets telle que si un objet de la chaine ne peut pas repondre à une requête, il puisse à son successeur jusqu'à ce que la requête soit traitée.
+
+dotnet new console -o ConsoleProject

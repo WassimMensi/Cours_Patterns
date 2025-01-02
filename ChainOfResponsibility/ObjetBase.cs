@@ -15,5 +15,22 @@ public abstract class ObjetBase
         return descriptionParDéfaut;
     }
 
+     public string DonneDescription()
+    {
+        string résultat = GetDescription();
+
+        if (résultat != null)
+        {
+            return résultat;
+        }
+        else if (suivant != null)
+        {
+            return suivant.DonneDescription();
+        }
+        else
+        {
+            return descriptionParDéfaut;
+        }
+    }
     
 }

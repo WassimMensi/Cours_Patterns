@@ -1,0 +1,15 @@
+C:\Users\wasso\OneDrive\Desktop\Isitech\ESI 4\Pattern C#\ChainOfResponsibility\ChainOfResponsibility2\obj\Debug\net8.0\ChainOfResponsibility2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\wasso\OneDrive\Desktop\Isitech\ESI 4\Pattern C#\ChainOfResponsibility\ChainOfResponsibility2\obj\Debug\net8.0\ChainOfResponsibility2.AssemblyInfoInputs.cache
+C:\Users\wasso\OneDrive\Desktop\Isitech\ESI 4\Pattern C#\ChainOfResponsibility\ChainOfResponsibility2\obj\Debug\net8.0\ChainOfResponsibility2.AssemblyInfo.cs
+C:\Users\wasso\OneDrive\Desktop\Isitech\ESI 4\Pattern C#\ChainOfResponsibility\ChainOfResponsibility2\obj\Debug\net8.0\ChainOfResponsibility2.csproj.CoreCompileInputs.cache
+C:\Users\wasso\OneDrive\Desktop\Isitech\ESI 4\Pattern C#\ChainOfResponsibility\ChainOfResponsibility2\obj\Debug\net8.0\ChainOfResponsibility2.sourcelink.json
+C:\Users\wasso\OneDrive\Desktop\Isitech\ESI 4\Pattern C#\ChainOfResponsibility\ChainOfResponsibility2\bin\Debug\net8.0\ChainOfResponsibility2.exe
+C:\Users\wasso\OneDrive\Desktop\Isitech\ESI 4\Pattern C#\ChainOfResponsibility\ChainOfResponsibility2\bin\Debug\net8.0\ChainOfResponsibility2.deps.json
+C:\Users\wasso\OneDrive\Desktop\Isitech\ESI 4\Pattern C#\ChainOfResponsibility\ChainOfResponsibility2\bin\Debug\net8.0\ChainOfResponsibility2.runtimeconfig.json
+C:\Users\wasso\OneDrive\Desktop\Isitech\ESI 4\Pattern C#\ChainOfResponsibility\ChainOfResponsibility2\bin\Debug\net8.0\ChainOfResponsibility2.dll
+C:\Users\wasso\OneDrive\Desktop\Isitech\ESI 4\Pattern C#\ChainOfResponsibility\ChainOfResponsibility2\bin\Debug\net8.0\ChainOfResponsibility2.pdb
+C:\Users\wasso\OneDrive\Desktop\Isitech\ESI 4\Pattern C#\ChainOfResponsibility\ChainOfResponsibility2\obj\Debug\net8.0\ChainOfResponsibility2.dll
+C:\Users\wasso\OneDrive\Desktop\Isitech\ESI 4\Pattern C#\ChainOfResponsibility\ChainOfResponsibility2\obj\Debug\net8.0\refint\ChainOfResponsibility2.dll
+C:\Users\wasso\OneDrive\Desktop\Isitech\ESI 4\Pattern C#\ChainOfResponsibility\ChainOfResponsibility2\obj\Debug\net8.0\ChainOfResponsibility2.pdb
+C:\Users\wasso\OneDrive\Desktop\Isitech\ESI 4\Pattern C#\ChainOfResponsibility\ChainOfResponsibility2\obj\Debug\net8.0\ChainOfResponsibility2.genruntimeconfig.cache
+C:\Users\wasso\OneDrive\Desktop\Isitech\ESI 4\Pattern C#\ChainOfResponsibility\ChainOfResponsibility2\obj\Debug\net8.0\ref\ChainOfResponsibility2.dll
