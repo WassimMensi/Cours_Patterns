@@ -179,13 +179,15 @@ Console.WriteLine(house);
 
 ## Prototype
 
+
+
+
 ### Définition
-Le **pattern Prototype** permet de créer de nouveaux objets en copiant des instances existantes, plutôt que de les créer à partir de zéro. Cela est particulièrement utile lorsqu'il est coûteux ou complexe de créer un nouvel objet à partir de rien. 
-
-
+Le **pattern Prototype** permet de créer de nouveaux objets en copiant des instances existantes sans rendre le code dépendant de leurs classe concrètes, plutôt que de les créer à partir de zéro on clone un objet existant en le modifiant si besoin. Cela est particulièrement utile lorsqu'il est coûteux ou complexe de créer un nouvel objet à partir de rien. 
+- Comme une photocopie d'un document, on copie l'original et on modifie la copie si besoin.
 
 ### Cas d'utilisation
-- Lorsque la création d’un objet est coûteuse ou complexe.
+- Lorsque la création d’un objet est coûteuse ou complexe (nombreuses configurations).
 - Lorsque vous avez besoin d’une copie exacte d’un objet existant.
 - Exemple : systèmes de gestion de ressources graphiques, éditeurs de graphismes.
 
@@ -276,4 +278,191 @@ var singleton = Singleton.Instance;
 singleton.DoSomething();
 ```
 
+---
 
+## Patterns de structuration
+
+Les **patterns de structuration** permettent de définir clairement la manière dont les classes et les objets collaborent entre eux pour former des structures plus complexes et maintenables. Ils facilitent l'indépendance entre l'interface d'un objet et son implémentation, tout en permettant une abstraction accrue de la composition des objets.
+
+Ces patterns encapsulent la manière dont les objets sont composés ou interagissent, tout comme les patterns de création encapsulent le processus de création des objets.
+
+### Principaux patterns de structuration
+
+1. **Adapter**
+   - Le pattern Adapter agit comme un traducteur entre deux parties qui ne peuvent pas communiquer directement, comme un adaptateur de prise électrique.
+   - **Cas d'utilisation** : Intégrer une bibliothèque ou un code externe dans un système existant.
+
+   Exemple :
+   ```csharp
+   // Interface cible
+   public interface ITarget
+   {
+       string GetRequest();
+   }
+
+   // Classe existante
+   public class Adaptee
+   {
+       public string GetSpecificRequest()
+       {
+           return "Requête spécifique";
+       }
+   }
+
+   // Adapter
+   public class Adapter : ITarget
+   {
+       private readonly Adaptee _adaptee;
+
+       public Adapter(Adaptee adaptee)
+       {
+           _adaptee = adaptee;
+       }
+
+       public string GetRequest()
+       {
+           return _adaptee.GetSpecificRequest();
+       }
+   }
+
+   // Utilisation
+   var adaptee = new Adaptee();
+   ITarget target = new Adapter(adaptee);
+   Console.WriteLine(target.GetRequest());
+   ```
+
+2. **Decorator**
+   - Permet d'ajouter dynamiquement des responsabilités supplémentaires à un objet sans modifier sa structure.
+   - **Cas d'utilisation** : Étendre des fonctionnalités à un objet sans modifier son code source.
+
+   Exemple :
+   ```csharp
+   // Interface de base
+   public interface IComponent
+   {
+       void Operation();
+   }
+
+   // Composant concret
+   public class ConcreteComponent : IComponent
+   {
+       public void Operation()
+       {
+           Console.WriteLine("Composant de base");
+       }
+   }
+
+   // Décorateur abstrait
+   public abstract class Decorator : IComponent
+   {
+       protected IComponent _component;
+
+       protected Decorator(IComponent component)
+       {
+           _component = component;
+       }
+
+       public virtual void Operation()
+       {
+           _component.Operation();
+       }
+   }
+
+   // Décorateur concret
+   public class ConcreteDecorator : Decorator
+   {
+       public ConcreteDecorator(IComponent component) : base(component) { }
+
+       public override void Operation()
+       {
+           base.Operation();
+           Console.WriteLine("Comportement ajouté par le décorateur");
+       }
+   }
+
+   // Utilisation
+   var component = new ConcreteComponent();
+   var decorated = new ConcreteDecorator(component);
+   decorated.Operation();
+   ```
+
+3. **Composite**
+   - Permet de traiter les objets individuels et les compositions d'objets de manière uniforme.
+   - **Cas d'utilisation** : Représenter des hiérarchies d'objets.
+
+4. **Proxy**
+   - Fournit un substitut ou un intermédiaire pour contrôler l'accès à un objet.
+   - **Cas d'utilisation** : Contrôler l'accès à des ressources coûteuses.
+
+Ces patterns de structuration sont essentiels pour maintenir un code clair, modulaire et flexible.
+
+
+# Pattern Bridge
+
+Le pattern Bridge sépare une grosse classe ou un ensemble de classes en deux parties distinctes
+qui peuvent évoluer indépendamment :
+
+- L'abstraction (ce que l'utilisateur voit et utilise)
+- L'implémentation (comment ça fonctionne en interne)
+
+Exemple concret avec des télécommandes TV :
+
+- Abstraction : La télécommande (avec ses boutons volume, chaîne, etc.)
+- Implémentation : Les différentes marques de TV (Samsung, Sony, LG...)
+
+C'est comme si vous aviez :
+
+```java
+// L'abstraction
+class Telecommande {
+    protected TV tv;  // Le "pont" vers l'implémentation
+
+    public void volumeHaut() {
+        tv.augmenterVolume();
+    }
+}
+
+// Les implémentations
+interface TV {
+    void augmenterVolume();
+}
+
+class TVSamsung implements TV {
+    void augmenterVolume() {
+        // Code spécifique Samsung
+    }
+}
+
+class TVSony implements TV {
+    void augmenterVolume() {
+        // Code spécifique Sony
+    }
+}
+```
+
+Avantages :
+
+- Vous pouvez changer la marque de TV sans changer la télécommande
+- Vous pouvez modifier la télécommande sans toucher au code des TV
+- Vous pouvez ajouter de nouvelles marques de TV facilement
+
+C'est comme avoir un adaptateur universel qui fonctionne avec différentes prises électriques
+
+- l'interface reste la même, mais l'implémentation change selon le pays.
+
+
+# Decorator Pattern
+
+Le but du pattern Decorator est d'ajouter des fonctionnalités dynamiquement à un objet
+
+Aucune modification de l'interface de l'objet
+Transparent vis-à-vis du client
+Une alternative à la création d'une sous-classe pour enrichir un objet
+
+#  Pattern de comportement
+
+Fournir des solutions pour distribuer les traitements et les algorithmes entre les objets
+
+### Chain of Responsibility
+
+Construit une chaine d'objets telle que si un objet de la chaine ne peut pas repondre à une requête, il puisse à son successeur jusqu'à ce que la requête soit traitée.
