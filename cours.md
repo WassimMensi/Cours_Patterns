@@ -467,4 +467,6 @@ Fournir des solutions pour distribuer les traitements et les algorithmes entre l
 
 Construit une chaine d'objets telle que si un objet de la chaine ne peut pas repondre à une requête, il puisse à son successeur jusqu'à ce que la requête soit traitée.
 
+Command permet de transformer une requête en objet, ce qui facilite les opérations comme les annulations ou les "retour en arrière" ou encore les mise en files d'attente des demandes et leur
+
 dotnet new console -o ConsoleProject
